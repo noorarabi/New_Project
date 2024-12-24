@@ -1,6 +1,6 @@
 
 using Microsoft.EntityFrameworkCore;
-using New_Project.Data;
+using New_Project.Domains.Data;
 
 namespace New_Project
 {
