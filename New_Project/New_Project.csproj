@@ -19,8 +19,6 @@
 
   <ItemGroup>
     <Folder Include="Domains\Configration\Config\" />
-    <Folder Include="IServices\" />
-    <Folder Include="Services\" />
   </ItemGroup>
 
 </Project>

@@ -1,6 +1,8 @@
 
 using Microsoft.EntityFrameworkCore;
 using New_Project.Domains.Data;
+using New_Project.IServices;
+using New_Project.Services;
 
 namespace New_Project
 {
@@ -9,7 +11,7 @@ namespace New_Project
         public static void Main(string[] args)
         {
             var builder = WebApplication.CreateBuilder(args);
-
+            builder.Services.AddScoped<IUserService, UserService>();
             // Add services to the container.
             builder.Services.AddDbContext<ApplicationDbContext>(options =>
     options.UseNpgsql(builder.Configuration.GetConnectionString("DefaultConnection")));
