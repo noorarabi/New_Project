@@ -3,7 +3,7 @@ using Microsoft.EntityFrameworkCore;
 using New_Project.Application.Services;
 using New_Project.Domains.Data;
 using New_Project.Infrastructure.Iservices;
-using New_Project.Infrastructure.Repositories;
+
 
 namespace New_Project
 {
@@ -12,7 +12,7 @@ namespace New_Project
         public static void Main(string[] args)
         {
             var builder = WebApplication.CreateBuilder(args);
-            builder.Services.AddScoped<IUserService, UserService>();
+           
             builder.Services.AddScoped<IAutherService, AutherService>();
             builder.Services.AddScoped<IBookService, BookService>();
             // Add services to the container.
