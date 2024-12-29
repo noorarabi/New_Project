@@ -1,5 +1,5 @@
 ﻿using Microsoft.EntityFrameworkCore;
-using New_Project.Models;
+using New_Project.Core.Models;
 using System.Collections.Generic;
 
 namespace New_Project.Domains.Data
@@ -11,6 +11,8 @@ namespace New_Project.Domains.Data
         }
 
 
-        public DbSet<User> User { get; set; }
+       
+        public DbSet<Auther> Authers { get; set; }
+        public DbSet<Book> Books { get; set; }
     }
 }

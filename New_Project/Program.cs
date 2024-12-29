@@ -1,8 +1,9 @@
 
 using Microsoft.EntityFrameworkCore;
+using New_Project.Application.Services;
 using New_Project.Domains.Data;
-using New_Project.IServices;
-using New_Project.Services;
+using New_Project.Infrastructure.Iservices;
+using New_Project.Infrastructure.Repositories;
 
 namespace New_Project
 {
@@ -12,6 +13,8 @@ namespace New_Project
         {
             var builder = WebApplication.CreateBuilder(args);
             builder.Services.AddScoped<IUserService, UserService>();
+            builder.Services.AddScoped<IAutherService, AutherService>();
+            builder.Services.AddScoped<IBookService, BookService>();
             // Add services to the container.
             builder.Services.AddDbContext<ApplicationDbContext>(options =>
     options.UseNpgsql(builder.Configuration.GetConnectionString("DefaultConnection")));
