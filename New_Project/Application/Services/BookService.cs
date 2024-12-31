@@ -23,7 +23,8 @@ namespace New_Project.Application.Services
         public async Task<object> DeleteBook(int id)
         {
             var book = await _context.Books.FindAsync(id);
-             _context.Books.Remove(book);
+            book.ISDeleted = true;
+             //_context.Books.Remove(book);
             await _context.SaveChangesAsync();
             return book;
         }

@@ -9,18 +9,13 @@ namespace New_Project.Core.Models
         
         public int BookId { get; set; }
 
-        [MaxLength(100)]
-        [MinLength(1)]
-        [Required]  
+      
         public string Title { get; set; }
-        [MaxLength(300)]
-        [MinLength(1)]
-        [DataType(DataType.MultilineText)]
-        [Required]
+       
         public string Description { get; set; }
-        
+        public bool ISDeleted { get; set; } 
         public int AutherId { get; set; }
-        [ForeignKey("AutherId")]
+      
         public Auther Auther { get; set; }  
     }
 }
